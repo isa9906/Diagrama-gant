@@ -6,6 +6,7 @@
 package diagrama.gantt;
 
 import java.util.Date;
+import logica.ColaBloqueados;
 import logica.ColaListos;
 
 /**
@@ -16,15 +17,19 @@ public class DiagramaGantt {
 
     public static void main(String[] args) {
         ColaListos cola = new ColaListos();
+        ColaBloqueados bloqueados= new ColaBloqueados(cola);
         GestionProcesos gestor =new GestionProcesos();
         Date fechaactual=new Date();
         String cadena;
-        cadena = "Nombre \t T llegada \t T rafaga \t T comienzo \t T final \t T retorno \t T espera \n";
-        cola.enqueue("A",0,3);
-        cola.enqueue("B",0,2);
-        cola.enqueue("C", 0,1);
+        System.out.println("Nombre \t T llegada \t T rafaga \t T comienzo \t T final \t T retorno \t T espera \n");
+        cola.enqueue(1,0,3);
+        cola.enqueue(2,0,2);
+        cola.enqueue(3,0,1);
         gestor.insertar(cola,fechaactual);
-        gestor.atender(cola);    
+        gestor.atender(cola);  
+        gestor.insertarbloqueado(bloqueados, fechaactual);
+        gestor.atenderbloqueados(bloqueados, cola);
+        
     }
     
     

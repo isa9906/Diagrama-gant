@@ -7,15 +7,17 @@ package logica;
 
 /**
  *
- * @author estudiantes
+ * @author Victoria
  */
-public class ColaListos {
+public class ColaBloqueados {
     private Nodo cabecera;
     private Nodo primero;
     private Nodo ultimo;
+    private ColaListos listos;
     int tam=0;
     
-    public ColaListos() {
+    public ColaBloqueados(ColaListos listos) {
+        this.listos=listos;
         cabecera=new Nodo (0,0,0,0,0,0,0,cabecera);
         primero=cabecera;
         ultimo=cabecera;
@@ -50,9 +52,8 @@ public class ColaListos {
             if(tam==1){
                aux2.setTcomienzo(0);
             }
-            aux2.setTfinal(aux2.getTcomienzo()+aux2.getTrafaga());
-            aux2.setTretorno(aux2.getTfinal()-aux2.getTllegada());
-            aux2.setTespera(aux2.getTretorno()-aux2.getTrafaga());
+            listos.enqueue(aux2.getNombre(),aux2.getTllegada(),aux2.getTrafaga());
+            
             Nodo aux=primero.getSiguiente();
             primero=aux;
             primero.setTcomienzo(aux2.getTfinal());

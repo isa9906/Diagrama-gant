@@ -5,7 +5,7 @@ package logica;
  * @author Isabel Pérez
  */
 public class Nodo {
-    private String nombre;
+    private int nombre;
     private int tllegada;
     private int trafaga;
     private int tcomienzo;
@@ -14,7 +14,7 @@ public class Nodo {
     private int tespera;
     private Nodo siguiente; 
     
-    public Nodo (String nombre,int tllegada,int trafaga,int tcomienzo,int tfinal,int tretorno,int tespera,Nodo siguiente){
+    public Nodo (int nombre,int tllegada,int trafaga,int tcomienzo,int tfinal,int tretorno,int tespera,Nodo siguiente){
       this.nombre=nombre;
       this.tllegada=tllegada;
       this.trafaga=trafaga;
@@ -25,11 +25,11 @@ public class Nodo {
       this.siguiente=siguiente;
     }
 
-    public String getNombre() {
+    public int getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(int nombre) {
         this.nombre = nombre;
     }
     
