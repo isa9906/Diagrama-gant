@@ -5,6 +5,8 @@
  */
 package logica;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Victoria
@@ -63,6 +65,30 @@ public class ColaBloqueados {
             return null;
         }
     }
+   public Nodo getI(int i){
+       Nodo aux=primero;
+       int j;
+       for (j=0;j<=i;j++){
+           aux=aux.getSiguiente();
+       }
+       return aux;
+   }
+   public ArrayList <Nodo> Mostar(){
+       ArrayList <Nodo> arreglo = null;
+       if(!estaVacia()){
+           Nodo aux = primero;
+            
+            while (aux!=cabecera){
+                arreglo.add(aux);
+                aux =aux.getSiguiente();
+            }        
+            return arreglo;
+       }
+       else{
+           return null;
+       }
+   }
+   
    
    
     public String Mostrar() {

@@ -14,7 +14,7 @@ import logica.ColaListos;
  * @author Victoria
  */
 public class DiagramaGantt {
-
+/**
     public static void main(String[] args) {
         ColaListos cola = new ColaListos();
         ColaBloqueados bloqueados= new ColaBloqueados(cola);
@@ -31,6 +31,6 @@ public class DiagramaGantt {
         gestor.atenderbloqueados(bloqueados, cola);
         
     }
-    
+  **/  
     
 }
