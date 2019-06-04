@@ -79,5 +79,13 @@ public class ColaListos {
             return cadena;
         }
     }
+    public Nodo getI(int i){
+       Nodo aux=primero;
+       int j;
+       for (j=0;j<=i;j++){
+           aux=aux.getSiguiente();
+       }
+       return aux;
+   }
    
 }

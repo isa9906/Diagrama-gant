@@ -96,11 +96,11 @@ public class ColaBloqueados {
             return "No hay procesos en cola";
         }
         else{
-            String cadena = "Nombre \t T llegada \t T rafaga \t T comienzo \t T final \t T retorno \t T espera \n";
+            String cadena = "Nombre \t T llegada \t T rafaga \n";
             Nodo aux = primero;
             
             while (aux!=cabecera){
-                cadena+= aux.getNombre() +"\t"+aux.getTllegada()+"\t"+aux.getTrafaga()+"\t"+aux.getTcomienzo()+"\t"+aux.getTfinal()+"\t"+aux.getTretorno()+"\t"+aux.getTespera()+"\n";
+                cadena+= aux.getNombre() +"\t"+aux.getTllegada()+"\t"+aux.getTrafaga()+"\t"+"\n";
                 aux =aux.getSiguiente();
             }        
             return cadena;

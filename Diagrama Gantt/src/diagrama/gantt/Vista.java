@@ -5,10 +5,10 @@
  */
 package diagrama.gantt;
 
+import java.awt.Color;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import logica.ColaBloqueados;
@@ -24,7 +24,8 @@ public class Vista extends javax.swing.JFrame {
     /**
      * Creates new form Vista
      */
-   
+     ColaListos cola=new ColaListos();
+     ColaBloqueados bloqueados= new ColaBloqueados(cola);
         
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +36,7 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -43,12 +45,24 @@ public class Vista extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        textArea1 = new java.awt.TextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
+        jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tabla de Listos");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Diagrama de Gantt");
+        setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel1.setFont(new java.awt.Font("Stencil", 1, 18)); // NOI18N
-        jLabel1.setText("Diagrama de Gantt");
+        jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Tabla de Listos");
 
+        jTable1.setFont(new java.awt.Font("Kristen ITC", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -58,8 +72,11 @@ public class Vista extends javax.swing.JFrame {
             }
         ));
         jTable1.setToolTipText("");
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButton1.setText("Iniciar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +84,7 @@ public class Vista extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setFont(new java.awt.Font("Kristen ITC", 0, 11)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -77,7 +95,7 @@ public class Vista extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jTable3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTable3.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -88,45 +106,78 @@ public class Vista extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable3);
 
+        textArea1.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Diagrama de Gantt");
+
+        jLabel4.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Historico de Bloqueados");
+
+        jLabel5.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Cola Atendidos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(390, 390, 390)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(429, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(160, 160, 160))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(419, 419, 419))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3)
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(431, 431, 431)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -134,7 +185,10 @@ public class Vista extends javax.swing.JFrame {
 
     
     public Vista() {
+        
         initComponents();
+        Color colorTablero = new Color(0, 29, 29);
+        this.getContentPane().setBackground(colorTablero);
         
         
     }
@@ -152,16 +206,16 @@ public class Vista extends javax.swing.JFrame {
         }
         //modelo.addRow(new Object[]{prueba.getNombre(),prueba.getTllegada(),prueba.getTrafaga(),prueba.getTcomienzo(),
         //prueba.getTfinal(),prueba.getTretorno(),prueba.getTespera()});
-        ColaListos cola=new ColaListos();
-        ColaBloqueados bloqueados= new ColaBloqueados(cola);
-        cola.enqueue(1,0,3);
-        cola.enqueue(2,0,2);
-        cola.enqueue(3,0,2);
+
+        cola.enqueue(5,0,3);
+        cola.enqueue(7,0,2);
+        cola.enqueue(11,0,2);
         Date comienzo=new Date();
         insertar(cola,comienzo);
         atender(cola);
         insertarbloqueado(bloqueados,comienzo);
         atenderbloqueados(bloqueados);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
     private int i=3;
     public  void insertar(ColaListos cola,Date comienzo) {
@@ -169,9 +223,11 @@ public class Vista extends javax.swing.JFrame {
 	    public void run() {
                i++;
 	        String turnoAtendido="";
+                
 	        //System.out.println("Insertando..."+ new Date());
-	        cola.enqueue(i,diferenciasegundos(comienzo,new Date()),(int)((Math.random()*8)+1));
+	        cola.enqueue(i*23,diferenciasegundos(comienzo,new Date()),(int)((Math.random()*8)+1));
                 //System.out.println(cola.Mostrar());
+                textArea1.setText(cola.Mostrar());
 	     }
 	    };
 	    Timer timer = new Timer("Timer"); //timer que programa la tarea para cada 5 segundos
@@ -180,17 +236,19 @@ public class Vista extends javax.swing.JFrame {
 	    timer.scheduleAtFixedRate(insertar, delay, period);
             
 	}
-    public  void insertarbloqueado(ColaBloqueados cola,Date comienzo) {
+    public  void insertarbloqueado(ColaBloqueados bloqueados,Date comienzo) {
 	TimerTask insertar = new TimerTask() {
 	    public void run() {
-               i++;
+               //i++;
 	        String turnoAtendido="";
-	        //System.out.println("Insertando..."+ new Date());
-     
-	        Nodo aux=cola.enqueue(i,diferenciasegundos(comienzo,new Date()),(int)((Math.random()*8)+1));
+                
+	        //System.out.println("Insertando..."+ new Date())
+                Nodo aux2=cola.getI((int)Math.random()*cola.size()-1);
+	        Nodo aux=bloqueados.enqueue(aux2.getNombre(),aux2.getTllegada(),aux2.getTrafaga());
                 DefaultTableModel modelo2 = (DefaultTableModel) jTable2.getModel();
-                modelo2.addRow(new Object[]{aux.getNombre(),aux.getTllegada(),aux.getTrafaga()});
+                modelo2.addRow(new Object[]{aux2.getNombre(),aux2.getTllegada(),aux2.getTrafaga()});
                 //System.out.println(cola.Mostrar());
+                //textArea1.setText(cola.Mostrar());
 	     }
 	    };
             
@@ -248,6 +306,7 @@ public class Vista extends javax.swing.JFrame {
 	    public void run() {
                 Nodo aux=cola.dequeue();
                 String cadena="";
+                
                 DefaultTableModel modelo2 = (DefaultTableModel) jTable2.getModel();
                 if(!cola.estaVacia()){
                     modelo2.removeRow(0);
@@ -301,6 +360,7 @@ public class Vista extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Vista().setVisible(true);
+                
             }
         });
     }
@@ -308,11 +368,16 @@ public class Vista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables
 }
